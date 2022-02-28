@@ -1,0 +1,28 @@
+.abc {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+footer{
+  height: 30px;
+  text-transform: uppercase;
+}
+.text-center{
+  background-color: #E0E0E0;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+p{
+  font-size: 1.25em;
+  line-height: 30px;
+  margin: 0 0 10px;
+  display: flex;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.slash{
+  color:red;
+}
