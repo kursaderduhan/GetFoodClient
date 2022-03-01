@@ -1,6 +1,5 @@
 .abc {
   display: block;
-  margin-bottom: 10px;
   margin-top: 0px;
 }
 footer{
@@ -8,15 +7,16 @@ footer{
   text-transform: uppercase;
 }
 .text-center{
-  background-color: #E0E0E0;
+  background-color: #f11212;
   justify-content: center;
   text-align: center;
   padding: 10px;
 }
 p{
+  font-family: "montserrat";
   font-size: 1.25em;
-  line-height: 30px;
-  margin: 0 0 10px;
+  line-height: 15px;
+  margin: 20px;
   display: flex;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -24,5 +24,11 @@ p{
   margin-inline-end: 0px;
 }
 .slash{
-  color:red;
+  font-size: 25px;
+  color: #e2d9d9;
 }
+.px-2:hover{
+  font-size:25px;
+  transition: 2s;
+}
+
