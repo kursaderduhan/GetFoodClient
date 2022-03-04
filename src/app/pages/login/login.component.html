@@ -1,0 +1,62 @@
+<div class="container mt-5" style="min-height: 800px">
+  <form [formGroup]="loginForm" (ngSubmit)="loginFormSubmit()">
+    <div class="row ">
+      <div class="mb-3 col-sm-8 mx-auto">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail"
+          aria-describedby="emailHelp"
+          formControlName="email"
+        />
+        <div id="emailHelp" class="form-text">Email info</div>
+        <div
+          class="form-text text-danger"
+          *ngIf="
+          loginForm.controls['email'].invalid &&
+            (loginForm.controls['email'].dirty ||
+            loginForm.controls['email'].touched)
+          "
+        >
+          <div *ngIf="loginForm.controls['email'].errors?.['required']">
+            Need email
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-0 col-sm-8 mx-auto">
+        <label for="inputPassword" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="inputPassword"
+          formControlName="password"
+        />
+        <div
+          class="form-text text-danger"
+          *ngIf="
+            loginForm.controls['password'].invalid &&
+            (loginForm.controls['password'].dirty ||
+            loginForm.controls['password'].touched)
+          "
+        >
+          <div *ngIf="loginForm.controls['password'].errors?.['required']">
+            Need password
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-8 mx-auto" >
+        <button type="submit" class="btn btn-light-orange mt-5 float-end">Login</button>
+      </div>
+
+      <!--row end-->
+    </div>
+
+
+
+
+  </form>
+</div>

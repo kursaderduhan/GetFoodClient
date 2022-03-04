@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+
+.bg-light-orange{
+  background-color: #FFC93C;
+}
+
+.bg-mid-orange{
+  background-color: #FF9A3C;
+}
+
+.bg-dark-orange{
+  background-color: #FF6F3C;
+}
+
+.btn-light-orange{
+  background-color: #FFC93C !important;
+  border-color: #FFC93C !important;
+}
+
+.btn-mid-orange{
+  background-color: #FF9A3C !important;
+  border-color: #FF9A3C !important;
+}
+
+.btn-dark-orange{
+  background-color: #FF6F3C !important;
+  border-color: #FF6F3C !important;
+}
+
+
+
+.top-rounded{
+  border-radius: 0.3rem 0.3rem 0px 0px;
+}
+
+.left-rounded{
+  border-radius: 0.3rem 0px 0px 0.3rem;
+}
+
+.right-rounded{
+  border-radius:  0px 0.3rem 0.3rem 0px;
+}

@@ -1,21 +1,189 @@
-<div class="container mt-5">
-  <form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email adresi</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-      />
-      <div id="emailHelp" class="form-text">
-        Email bilgi
+<div class="container mt-5" style="min-height: 800px">
+  <form [formGroup]="registerForm" (ngSubmit)="registerFormSubmit()">
+    <div class="row">
+      <div class="mb-3 col-sm-6">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail"
+          aria-describedby="emailHelp"
+          formControlName="email"
+        />
+        <div id="emailHelp" class="form-text">Email info</div>
+        <div
+          class="form-text text-danger"
+          *ngIf="
+            registerForm.controls['email'].invalid &&
+            (registerForm.controls['email'].dirty ||
+              registerForm.controls['email'].touched)
+          "
+        >
+          <div *ngIf="registerForm.controls['email'].errors?.['required']">
+            Need email
+          </div>
+          <div *ngIf="registerForm.controls['email'].errors?.['email']">
+            Invalid email
+          </div>
+        </div>
       </div>
+
+      <div class="mb-3 col-sm-6">
+        <label for="inputPassword" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="inputPassword"
+          formControlName="password"
+        />
+        <div
+          class="form-text text-danger"
+          *ngIf="
+            registerForm.controls['password'].invalid &&
+            (registerForm.controls['password'].dirty ||
+              registerForm.controls['password'].touched)
+          "
+        >
+          <div *ngIf="registerForm.controls['password'].errors?.['required']">
+            Need password
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3 col-sm-6">
+        <label for="firstNameInput" class="form-label">First name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstNameInput"
+          aria-describedby="firstNameHelp"
+          formControlName="firstName"
+          maxlength="50"
+          name="firstName"
+        />
+        <div
+          class="form-text text-danger"
+          *ngIf="
+            registerForm.controls['firstName'].invalid &&
+            (registerForm.controls['firstName'].dirty ||
+              registerForm.controls['firstName'].touched)
+          "
+        >
+          <div *ngIf="registerForm.controls['firstName'].errors?.['required']">
+            Need first name
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3 col-sm-6">
+        <label for="lastNameInput" class="form-label">Last name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastNameInput"
+          aria-describedby="lastNameHelp"
+          formControlName="lastName"
+          maxlength="50"
+          name="firstName"
+        />
+        <div
+          class="form-text text-danger"
+          *ngIf="
+            registerForm.controls['lastName'].invalid &&
+            (registerForm.controls['lastName'].dirty ||
+              registerForm.controls['lastName'].touched)
+          "
+        >
+          <div *ngIf="registerForm.controls['lastName'].errors?.['required']">
+            Need last name
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="cityInput" class="form-label">City</label>
+        <select
+          id="cityInput"
+          class="form-select"
+          aria-label=""
+          formControlName="province"
+        >
+          <option value="1">İstanbul</option>
+          <option value="2">Ankara</option>
+          <option value="3">İzmir</option>
+        </select>
+        <div
+          class="form-text text-danger"
+          *ngIf="
+            registerForm.controls['province'].invalid &&
+            (registerForm.controls['province'].dirty ||
+              registerForm.controls['province'].touched)
+          "
+        >
+          <div *ngIf="registerForm.controls['province'].errors?.['required']">
+            Need city
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3 col-sm-6">
+        <label for="phoneNumberInput" class="form-label">Phone number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumberInput"
+          formControlName="phoneNumber"
+          maxlength="50"
+          name="phoneNumber"
+        />
+        <div
+          class="form-text text-danger"
+          *ngIf="
+            registerForm.controls['phoneNumber'].invalid &&
+            (registerForm.controls['phoneNumber'].dirty ||
+              registerForm.controls['phoneNumber'].touched)
+          "
+        >
+          <div
+            *ngIf="registerForm.controls['phoneNumber'].errors?.['required']"
+          >
+            Need phone
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="addressInput" class="form-label">Adres</label>
+        <div class="input-group">
+          <textarea
+            id="addressInput"
+            class="form-control"
+            aria-label="With textarea"
+            rows="3"
+            style="resize: none"
+            formControlName="address"
+            maxlength="500"
+            name="address"
+          ></textarea>
+        </div>
+        <div
+          class="form-text text-danger"
+          *ngIf="
+            registerForm.controls['address'].invalid &&
+            (registerForm.controls['address'].dirty ||
+              registerForm.controls['address'].touched)
+          "
+        >
+          <div *ngIf="registerForm.controls['address'].errors?.['required']">
+            Adres girilmesi gerekiyor
+          </div>
+        </div>
+      </div>
+
+      <!--row end-->
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Şifre</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" />
-    </div>
-    <button type="submit" class="btn btn-primary">Kayıt ol</button>
+
+    <button type="submit" class="btn btn-mid-orange mt-5">Register</button>
+
   </form>
 </div>

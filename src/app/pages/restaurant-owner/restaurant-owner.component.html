@@ -1,0 +1,84 @@
+<div class="container mt-3">
+
+  <div *ngIf="!haveRestaurant" >
+    <div class="bg-light-orange fs-2 text-center">
+      If you have restaurant you can create a page for it
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label for="restaurantNameInput" class="form-label"
+        >Restaurant Name</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="restaurantNameInput"
+        placeholder="Restaurant Name"
+        [(ngModel)]="inputRestaurantName"
+      />
+    </div>
+
+    <button (click)="bindRestaurantToUser()" class="btn btn-mid-orange">Create</button>
+  </div>
+
+
+
+
+
+  <div *ngIf="haveRestaurant" >
+    <div class="bg-light-orange fs-2 text-center">
+      Your Restaurant - {{restaurantName}}
+    </div>
+
+
+    <h4 class="mt-5">Add new food for customers</h4>
+    <div class="mb-3 mt-3">
+      <label for="foodNameInput" class="form-label"
+        >Food name</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="foodNameInput"
+        placeholder=""
+        [(ngModel)]="inputFoodName"
+      />
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="foodPriceInput" class="form-label"
+        >Price</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="foodPriceInput"
+        placeholder=""
+        [(ngModel)]="inputFoodPrice"
+      />
+    </div>
+
+    <button (click)="addFoodToRestaurant()" class="btn btn-mid-orange">Add Food</button>
+
+
+
+
+    <h4 class="mt-5">Restaurant's Menu</h4>
+    <div
+      *ngFor="let targetFood of foodListOfRestaurant"
+      class="bg-light-orange d-flex justify-content-between align-items-center p-2 border-orange"
+
+    >
+      <div>{{targetFood['foodName']}}</div>
+      <div>{{targetFood['price']}} Dolar<button class="btn btn-dark-orange ms-3 disabled">Cancel</button></div>
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+
+</div>

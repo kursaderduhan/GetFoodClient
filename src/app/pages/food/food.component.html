@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <div class="row" >
+    <div class="col-sm-3 bg-light-orange" >Filter</div>
+
+    <div id="restaurant-list" class="col-sm-9">
+
+      <div class="bg-mid-orange mb-1 fs-4 p-1" *ngFor="let restaurant of restaurantList" >
+        <a class="" [routerLink]="'/restaurant/'+restaurant['restaurantId']" >{{restaurant['restaurantName']}}</a>
+      </div>
+
+    </div>
+  </div>
+</div>

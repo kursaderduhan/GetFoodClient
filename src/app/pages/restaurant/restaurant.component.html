@@ -1,0 +1,15 @@
+
+<div class="container mt-3">
+  <div>
+    <h2 class="text-center bg-mid-orange p-2 mb-1 text-capitalize">{{restaurantName}} - Foods</h2>
+
+    <div
+      *ngFor="let targetFood of foodList"
+      class="bg-light-orange d-flex justify-content-between align-items-center p-2 border-orange"
+
+    >
+      <div>{{targetFood['foodName']}}</div>
+      <div>{{targetFood['price']}} Dolar<button (click)="orderFood(targetFood['foodId'])" class="btn btn-dark-orange ms-3">Order</button></div>
+    </div>
+  </div>
+</div>
